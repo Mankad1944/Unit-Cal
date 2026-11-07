@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712;
+  --foreground: #f3f4f6;
+}
+
+html.light, body.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ========================================================
+   LIGHT THEME OVERRIDES
+   ======================================================== */
+html.light,
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header & Navbar in Light Mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer in Light Mode */
+html.light footer {
+  background-color: #f1f5f9 !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+  color: #475569 !important;
+}
+
+/* Deep background panels */
+html.light .bg-slate-950,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/40 {
+  background-color: #f8fafc !important;
+}
+
+/* Cards & Modals */
+html.light .bg-slate-900,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+/* Inner inputs, sub-containers, item cards */
+html.light .bg-slate-800,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/40,
+html.light .bg-slate-800\/30 {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Borders */
+html.light .border-white\/10,
+html.light .border-white\/5,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Text Hierarchy */
+html.light .text-white {
+  color: #0f172a !important;
+}
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+html.light .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Inputs, Selects & Textareas */
+html.light input,
+html.light select,
+html.light textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Range input track */
+html.light input[type="range"] {
+  background-color: #cbd5e1 !important;
+}
+
+/* ========================================================
+   GLOBAL CURSOR POINTER ON ALL INTERACTIVE ELEMENTS
+   ======================================================== */
+button,
+[role="button"],
+select,
+summary,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+a,
+.clickable,
+.tab,
+.btn,
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  cursor: pointer !important;
+}
+input[type="range"]::-moz-range-thumb {
+  cursor: pointer !important;
+}
+
+/* ========================================================
+   REMOVE UP AND DOWN SPINNER BUTTONS FROM ALL NUMBER INPUTS
+   ======================================================== */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  display: none !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
